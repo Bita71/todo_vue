@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import ButtonCount from "../components/ButtonCount.vue";
-import { defineProps } from "vue";
 
 const props = defineProps<{
   list: {
