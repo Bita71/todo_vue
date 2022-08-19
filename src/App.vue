@@ -9,32 +9,49 @@ const todos = reactive([
   {
     name: "Развернуть окружение в Codepen",
     finish: false,
+    likes: 0,
+    dislikes: 0,
   },
   {
     name: "Пройти курс по Vue",
     finish: false,
+    likes: 0,
+    dislikes: 0,
   },
   {
     name: "Сделать интернет-магазин на Vue",
     finish: false,
+    likes: 0,
+    dislikes: 1,
   },
   {
     name: "Пройти HTML",
     finish: true,
+    likes: 0,
+    dislikes: 0,
   },
   {
     name: "Пройти CSS",
     finish: true,
+    likes: 0,
+    dislikes: 0,
   },
   {
     name: "Пройти JS",
     finish: true,
+    likes: 0,
+    dislikes: 0,
   },
 ]);
 
 const addTodo = () => {
   if (name.value) {
-    todos.push({ name: name.value, finish: false });
+    todos.push({
+      name: name.value,
+      finish: false,
+      likes: 0,
+      dislikes: 0,
+    });
     name.value = "";
   }
 };
