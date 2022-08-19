@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { ref } from "vue";
+const props = defineProps<{ count: number }>();
+const emit = defineEmits<{
+  (event: "increment", count: number): void;
+}>();
 
-const count = ref(0);
-
-const increment = () => count.value++;
+const increment = () => emit("increment", props.count + 1);
 </script>
 
 <template>
   <button type="button" @click="increment">
     <slot></slot>
-    {{ count }}
+    {{ props.count }}
   </button>
 </template>
 
