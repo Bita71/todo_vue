@@ -5,6 +5,8 @@ const props = defineProps<{
   list: {
     finish: boolean;
     name: string;
+    likes: number;
+    dislikes: number;
   }[];
   title?: string;
 }>();
@@ -22,8 +24,12 @@ const props = defineProps<{
       >
         <input v-model="todo.finish" type="checkbox" />
         {{ todo.name }}
-        <ButtonCount>Лайк</ButtonCount>
-        <ButtonCount>Дизлайк</ButtonCount>
+        <ButtonCount :count="todo.likes" @increment="todo.likes++"
+          >Лайк</ButtonCount
+        >
+        <ButtonCount :count="todo.dislikes" @increment="todo.dislikes++"
+          >Дизлайк</ButtonCount
+        >
       </li>
     </TransitionGroup>
   </ul>
